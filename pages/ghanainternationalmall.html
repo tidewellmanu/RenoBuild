@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Residence - Project Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            cream: {
+              50: '#fffefc',
+              100: '#fdfbf7',
+              200: '#f7f2e8',
+              300: '#eee5d3',
+              400: '#e2d3b7',
+              800: '#443d31',
+              900: '#2c271e',
+            },
+            accentRed: {
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar styling for thumbnails */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Touch action optimization for sliders */
+    .touch-pan-y {
+      touch-action: pan-y;
+    }
+
+    /* Red glass pill styling */
+    .glass-pill-red {
+      background: rgba(220, 38, 38, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .glass-pill-dark {
+      background: rgba(44, 39, 30, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-[#f5f0e6] text-stone-800 font-sans min-h-screen flex items-center justify-center p-4 md:p-8">
+
+  <main class="w-full max-w-4xl mx-auto bg-[#fdfbf7] rounded-2xl border border-[#eee5d3] shadow-xl overflow-hidden">
+    
+    <header class="p-6 md:p-8 border-b border-[#eee5d3] flex flex-wrap justify-between items-center gap-4 bg-[#faf6ee]">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+          <span class="text-xs font-semibold tracking-widest text-red-700 uppercase">Architecture Showcase</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-stone-900">Ghana International Mall</h1>
+        <p class="text-stone-600 text-sm mt-1 flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></path></svg>
+          Residential · Spintex, Accra
+        </p>
+      </div>
+      <div class="flex items-center gap-4 sm:gap-6">
+        <a href="/index.html" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-red-600 hover:bg-red-700 rounded-lg shadow-sm border border-red-500 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          Home
+        </a>
+        <div class="text-right border-l border-[#eee5d3] pl-4 sm:pl-6">
+          <span class="block text-xs text-stone-500 uppercase tracking-wider">Project ID</span>
+          <span class="text-xl font-mono font-bold text-red-700">#SP1</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="relative p-4 md:p-6 pb-2">
+      <!-- Image Display Frame -->
+      <div id="sliderFrame" class="relative w-full aspect-[4/3] md:aspect-[16/9] rounded-xl overflow-hidden bg-stone-200 group touch-pan-y cursor-grab active:cursor-grabbing border border-[#eee5d3]">
+        
+        <!-- Slide 1 -->
+        <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-100 z-10">
+          <img src="../assets/images/projects/ghanainternationalmallproject1.jpeg" 
+               alt="Modern Residence - Main Exterior Elevation" 
+               class="w-full h-full object-cover select-none">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <span class="glass-pill-dark text-xs text-stone-100 px-3 py-1.5 rounded-full font-medium border border-stone-600/50">
+              01 / Exterior Facade
+            </span>
+            <button onclick="openLightbox(0)" class="bg-red-600 hover:bg-red-700 text-xs text-white px-3.5 py-1.5 rounded-full font-medium border border-red-500 flex items-center gap-1.5 transition-colors shadow-md">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              Enlarge View
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 z-0">
+          <img src="../assets/images/projects/ghanainternationalmallproject2.jpeg" 
+               alt="Modern Residence - Living Room" 
+               class="w-full h-full object-cover select-none">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <span class="glass-pill-dark text-xs text-stone-100 px-3 py-1.5 rounded-full font-medium border border-stone-600/50">
+              02 / Exterior Facade & Garage
+            </span>
+            <button onclick="openLightbox(1)" class="bg-red-600 hover:bg-red-700 text-xs text-white px-3.5 py-1.5 rounded-full font-medium border border-red-500 flex items-center gap-1.5 transition-colors shadow-md">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              Enlarge View
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 z-0">
+          <img src="../assets/images/projects/ghanainternationalmallproject3.jpeg" 
+               alt="Modern Residence - Kitchen Design" 
+               class="w-full h-full object-cover select-none">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <span class="glass-pill-dark text-xs text-stone-100 px-3 py-1.5 rounded-full font-medium border border-stone-600/50">
+              03 / View From Staircase Landing
+            </span>
+            <button onclick="openLightbox(2)" class="bg-red-600 hover:bg-red-700 text-xs text-white px-3.5 py-1.5 rounded-full font-medium border border-red-500 flex items-center gap-1.5 transition-colors shadow-md">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              Enlarge View
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 z-0">
+          <img src="../assets/images/projects/ghanainternationalmallproject4.jpeg" 
+               alt="Modern Residence - Master Bedroom" 
+               class="w-full h-full object-cover select-none">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <span class="glass-pill-dark text-xs text-stone-100 px-3 py-1.5 rounded-full font-medium border border-stone-600/50">
+              04 / Outdoor Terrace
+            </span>
+            <button onclick="openLightbox(3)" class="bg-red-600 hover:bg-red-700 text-xs text-white px-3.5 py-1.5 rounded-full font-medium border border-red-500 flex items-center gap-1.5 transition-colors shadow-md">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              Enlarge View
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 z-0">
+          <img src="../assets/images/projects/ghanainternationalmallproject5.jpeg" 
+               alt="Modern Residence - Patio & Pool Evening" 
+               class="w-full h-full object-cover select-none">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <span class="glass-pill-dark text-xs text-stone-100 px-3 py-1.5 rounded-full font-medium border border-stone-600/50">
+              05 / Escalator Lobby & Atrium View
+            </span>
+            <button onclick="openLightbox(4)" class="bg-red-600 hover:bg-red-700 text-xs text-white px-3.5 py-1.5 rounded-full font-medium border border-red-500 flex items-center gap-1.5 transition-colors shadow-md">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              Enlarge View
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide-item absolute inset-0 transition-opacity duration-500 opacity-0 z-0">
+          <img src="../assets/images/projects/ghanainternationalmallongoing.jpeg" 
+               alt="Modern Residence - Luxury Bathroom" 
+               class="w-full h-full object-cover select-none">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <span class="glass-pill-dark text-xs text-stone-100 px-3 py-1.5 rounded-full font-medium border border-stone-600/50">
+              06 / Unfinished Exterior View
+            </span>
+            <button onclick="openLightbox(5)" class="bg-red-600 hover:bg-red-700 text-xs text-white px-3.5 py-1.5 rounded-full font-medium border border-red-500 flex items-center gap-1.5 transition-colors shadow-md">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              Enlarge View
+            </button>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons (Red Accent) -->
+        <button id="prevBtn" onclick="prevSlide()" aria-label="Previous Slide" 
+                class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-red-600/90 hover:bg-red-700 border border-red-500 text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="nextBtn" onclick="nextSlide()" aria-label="Next Slide" 
+                class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-red-600/90 hover:bg-red-700 border border-red-500 text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="mt-4">
+        <div id="thumbContainer" class="flex gap-3 overflow-x-auto no-scrollbar py-1 px-0.5 scroll-smooth">
+          <!-- Thumb 1 -->
+          <button onclick="goToSlide(0)" class="thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-red-600 ring-2 ring-red-600/30 transition-all opacity-100">
+            <img src="../assets/images/projects/ghanainternationalmallproject1.jpeg" class="w-full h-full object-cover" alt="Thumb 1">
+          </button>
+          <!-- Thumb 2 -->
+          <button onclick="goToSlide(1)" class="thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-red-400 transition-all opacity-60 hover:opacity-100">
+            <img src="../assets/images/projects/ghanainternationalmallproject2.jpeg" class="w-full h-full object-cover" alt="Thumb 2">
+          </button>
+          <!-- Thumb 3 -->
+          <button onclick="goToSlide(2)" class="thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-red-400 transition-all opacity-60 hover:opacity-100">
+            <img src="../assets/images/projects/ghanainternationalmallproject3.jpeg" class="w-full h-full object-cover" alt="Thumb 3">
+          </button>
+          <!-- Thumb 4 -->
+          <button onclick="goToSlide(3)" class="thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-red-400 transition-all opacity-60 hover:opacity-100">
+            <img src="../assets/images/projects/ghanainternationalmallproject4.jpeg" class="w-full h-full object-cover" alt="Thumb 4">
+          </button>
+          <!-- Thumb 5 -->
+          <button onclick="goToSlide(4)" class="thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-red-400 transition-all opacity-60 hover:opacity-100">
+            <img src="../assets/images/projects/ghanainternationalmallproject5.jpeg" class="w-full h-full object-cover" alt="Thumb 5">
+          </button>
+          <!-- Thumb 6 -->
+          <button onclick="goToSlide(5)" class="thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-red-400 transition-all opacity-60 hover:opacity-100">
+            <img src="../assets/images/projects/ghanainternationalmallongoing.jpeg" class="w-full h-full object-cover" alt="Thumb 6">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="p-6 md:p-8 bg-[#faf6ee] border-t border-[#eee5d3] mt-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+        <div>
+          <span class="text-stone-500 block uppercase tracking-wider mb-1">Architect</span>
+          <span class="text-stone-900 font-semibold">RENO-BUILD Construction Ltd.</span>
+        </div>
+        <div>
+          <span class="text-stone-500 block uppercase tracking-wider mb-1">Total Area</span>
+          <span class="text-stone-900 font-semibold">80,000 sq. meters</span>
+        </div>
+        <div>
+          <span class="text-stone-500 block uppercase tracking-wider mb-1">Completion</span>
+          <span class="text-stone-900 font-semibold">Q3 2025</span>
+        </div>
+        <div>
+          <span class="text-stone-500 block uppercase tracking-wider mb-1">Status</span>
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Completed
+          </span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-md hidden flex-col justify-between p-4 md:p-8 transition-opacity duration-300">
+    <!-- Lightbox Controls Top Bar -->
+    <div class="flex justify-between items-center text-white z-10 max-w-7xl mx-auto w-full">
+      <div>
+        <h3 id="lbTitle" class="font-semibold text-lg text-cream-100">Modern Residence</h3>
+        <p id="lbCaption" class="text-xs text-stone-300">01 / Exterior Facade & Pool</p>
+      </div>
+      <button onclick="closeLightbox()" class="p-2.5 rounded-full bg-red-600 hover:bg-red-700 text-white transition-colors" aria-label="Close modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Lightbox Center Content -->
+    <div class="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
+      <img id="lbImage" src="" alt="Enlarged architectural view" class="max-h-full max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300">
+      
+      <!-- Modal Navigation Arrows (Red Accent) -->
+      <button onclick="lbPrev()" aria-label="Previous Image" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-red-600/90 hover:bg-red-700 text-white flex items-center justify-center transition-all shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button onclick="lbNext()" aria-label="Next Image" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-red-600/90 hover:bg-red-700 text-white flex items-center justify-center transition-all shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Lightbox Counter Bottom -->
+    <div class="text-center text-xs text-stone-300 z-10">
+      <span id="lbCounter" class="font-mono text-red-400 font-bold">1</span> of 6
+    </div>
+  </div>
+
+  <script>
+    // State management
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-item');
+    const thumbs = document.querySelectorAll('.thumb-btn');
+    const totalSlides = slides.length;
+    
+    // Slide metadata captions
+    const captions = [
+      "01 / Exterior Facade & Pool",
+      "02 / Open Plan Living Space",
+      "03 / Minimalist Chef's Kitchen",
+      "04 / Master Suite Sanctuary",
+      "05 / Twilight Outdoor Terrace",
+      "06 / En-Suite Bathroom Details"
+    ];
+
+    // High resolution URLs for lightbox
+    const imageSources = Array.from(slides).map(slide => slide.querySelector('img').src);
+
+    // Update active slide view
+    function updateSlider(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.remove('opacity-0', 'z-0');
+          slide.classList.add('opacity-100', 'z-10');
+        } else {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0', 'z-0');
+        }
+      });
+
+      // Update thumbnails styling
+      thumbs.forEach((thumb, idx) => {
+        if (idx === currentSlide) {
+          thumb.className = "thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-red-600 ring-2 ring-red-600/30 transition-all opacity-100";
+          thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+          thumb.className = "thumb-btn flex-shrink-0 relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-red-400 transition-all opacity-60 hover:opacity-100";
+        }
+      });
+    }
+
+    function nextSlide() {
+      updateSlider(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      updateSlider(currentSlide - 1);
+    }
+
+    function goToSlide(index) {
+      updateSlider(index);
+    }
+
+    let lbIndex = 0;
+
+    function openLightbox(index) {
+      lbIndex = index;
+      updateLightbox();
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+      document.getElementById('lbImage').src = imageSources[lbIndex];
+      document.getElementById('lbCaption').innerText = captions[lbIndex];
+      document.getElementById('lbCounter').innerText = lbIndex + 1;
+    }
+
+    function lbNext() {
+      lbIndex = (lbIndex + 1) % totalSlides;
+      updateLightbox();
+    }
+
+    function lbPrev() {
+      lbIndex = (lbIndex - 1 + totalSlides) % totalSlides;
+      updateLightbox();
+    }
+
+    const frame = document.getElementById('sliderFrame');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    frame.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    frame.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const threshold = 40;
+      if (touchEndX < touchStartX - threshold) {
+        nextSlide();
+      } else if (touchEndX > touchStartX + threshold) {
+        prevSlide();
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      const isLbOpen = !lb.classList.contains('hidden');
+
+      if (e.key === 'ArrowRight') {
+        isLbOpen ? lbNext() : nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        isLbOpen ? lbPrev() : prevSlide();
+      } else if (e.key === 'Escape' && isLbOpen) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
